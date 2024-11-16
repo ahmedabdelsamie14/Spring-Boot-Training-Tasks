@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- id is the identifier that we will use it to get a bean from container -->
+    <!-- class is the class name of the bean object -->
+    <bean id="circle" class="Circle">
+        <property name="DrawShape" ref="beanDraw"/>
+    </bean>
+    <bean id="rectangle" class="Rectangle">
+        <constructor-arg ref="beanDraw"/>
+    </bean>
+    <bean id="beanDraw" class="DrawShape"></bean>
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="databaseOBJ" class="DatabaseManagement" init-method="dbConnection" destroy-method="dbDispose">
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <bean id="product" class="Product" scope="prototype">
+        <constructor-arg ref="databaseOBJ"/>
+    </bean>
+
+</beans>
