@@ -1,0 +1,79 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container styling */
+form {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Input field styling */
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Input focus effect */
+form input[type="text"]:focus,
+form input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Link styling */
+form input[type="submit"] {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+/* Link hover effect */
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+}
